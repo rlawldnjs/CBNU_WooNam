@@ -7,9 +7,12 @@ CBNU_WooNam 김동용, 김지원, 박재원, 최성운
 ## 간단한 git 메뉴얼
 
 - master 브랜치에 있는 코드를 클론하여 내 컴퓨터 저장소에 가져온다.<br>
-  git clone https://github.com/kingyong9169/CBNU_WooNam.git
 
-* 브랜치 생성
+```Linux
+$ git clone https://github.com/kingyong9169/CBNU_WooNam.git
+```
+
+- 브랜치 생성
   "git branch [브랜치 이름]" 을 해도 되지만 아래 방법을 추천
   ※브랜치 이름은 Kebab 표현법으로 하도록 하자 ( ex main-page, front-color )
 
@@ -17,7 +20,14 @@ CBNU_WooNam 김동용, 김지원, 박재원, 최성운
 $ git checkout -b [브랜치 이름]
 ```
 
-- git add
+- git status<br>
+  항상 add, commit 전에는
+  ```Linux
+   git status
+  ```
+  위 코드로 자신이 수정한 파일의 상태를 확인하여 맞다면 아래 사항들을 진행할 것
+
+* git add
   "git add ." 대신에 어떤 일의 단위로 묶기 ( 나중에 comment 달 때에 힘들어지기 때문에 )
   ex) 내가 main page의 버튼의 style을 바꾸는 작업을 하면서 style.html과 MainActivity를 건드렸다면
   아래 예시와 같이 2개만 add하고 commit하는 것이 다른 사람들이 보기에도 편해진다
