@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944357352855",
+    "project_id": "woonam-1",
+    "storage_bucket": "woonam-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944357352855:android:735108900e531a343550d2",
+        "android_client_info": {
+          "package_name": "com.app_services.WooNam.chattingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944357352855-iom7tei3ic4mtk9onh5dj82bk6jnga31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7J1nWwLRCkO3WnVqlbbH-Jc-lJLUVpAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944357352855-iom7tei3ic4mtk9onh5dj82bk6jnga31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
