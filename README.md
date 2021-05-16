@@ -6,7 +6,7 @@ CBNU_WooNam 김동용, 김지원, 박재원, 최성운
 
 ## 간단한 git 메뉴얼
 
-- master 브랜치에 있는 코드를 클론하여 내 컴퓨터 저장소에 가져온다.
+- master 브랜치에 있는 코드를 클론하여 내 컴퓨터 저장소에 가져온다.<br>
   git clone https://github.com/kingyong9169/CBNU_WooNam.git
 
 * 브랜치 생성
