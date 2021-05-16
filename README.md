@@ -6,20 +6,10 @@ CBNU_WooNam 김동용, 김지원, 박재원, 최성운
 
 ## 간단한 git 메뉴얼
 
-- pwd
+- master 브랜치에 있는 코드를 클론하여 내 컴퓨터 저장소에 가져온다.
+  git clone https://github.com/kingyong9169/CBNU_WooNam.git
 
-- git init
-
-- git add MainActivity.java
-  모두 추가: git add --all
-
-- git commit -m "#[이슈번호] 메인 페이지의 버튼 style을 변경"
-
-- git remote add origin https://github.com/kingyong9169/CBNU_WooNam.git
-
-- git push -u origin master
-
-- 브랜치 생성
+* 브랜치 생성
   "git branch [브랜치 이름]" 을 해도 되지만 아래 방법을 추천
   ※브랜치 이름은 Kebab 표현법으로 하도록 하자 ( ex main-page, front-color )
 
