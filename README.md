@@ -60,7 +60,7 @@ $ git push origin [자신의 브랜치]
 Hello everyone, this is my first ever Android App which runs on Firebase Realtime Database.
 Some of the features are written below, don't forget to put the Star if you like it.
 
-### Download App : <a href="https://drive.google.com/file/d/14Z24eJOy8wZX3LXQ-9wNzaSdYAfQ_V_a/view?usp=sharing">Click Here</a>
+### Download App : <a href="/">Click Here</a>
 
 ## Features
 
