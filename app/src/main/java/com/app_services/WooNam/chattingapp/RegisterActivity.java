@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     Toast.makeText(RegisterActivity.this, "Password not matched!, Please write it again!", Toast.LENGTH_SHORT).show();
                 }
-                register(txt_fName, txt_username, txt_email, txt_password,txt_school,txt_conPassword,txt_git,txt_favorite);
+                register(txt_fName, txt_username, txt_email, txt_password,txt_school,txt_aword,txt_git,txt_favorite);
             }
         });
 
@@ -101,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(final String fName, final String username,
                           final String email, final String password,
                           final String school,final String aword,
-                          final String favorite,final String git){
+                          final String git,final String favorite){
 
         progressBar.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
