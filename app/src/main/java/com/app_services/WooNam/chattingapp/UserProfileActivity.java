@@ -24,7 +24,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    TextView tv_name, tv_username, tv_about;
+    TextView tv_name, tv_username, tv_about,tv_school,tv_aword,tv_git,tv_favorite;
     CircleImageView profile_pic;
     DatabaseReference reference;
     FirebaseUser firebaseUser;
@@ -36,7 +36,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("User Profile");
+        getSupportActionBar().setTitle("사용자 정보");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,12 @@ public class UserProfileActivity extends AppCompatActivity {
         tv_name = findViewById(R.id.tvName);
         tv_about = findViewById(R.id.tvAbout);
         tv_username = findViewById(R.id.tvUsername);
+        tv_school= findViewById(R.id.tvSchool);
+        tv_aword=findViewById(R.id.tvAword);
+        tv_git=findViewById(R.id.tvGit);
+        tv_favorite=findViewById(R.id.tvFavorite);
+
+
         profile_pic = findViewById(R.id.user_profile_pic);
 
         String userId = getIntent().getStringExtra("userId");
@@ -61,6 +67,10 @@ public class UserProfileActivity extends AppCompatActivity {
                 tv_name.setText(user.getName());
                 tv_about.setText(user.getUser_about());
                 tv_username.setText(user.getUsername());
+                tv_school.setText(user.getSchool());
+                tv_aword.setText(user.getAword());
+                tv_git.setText(user.getGit());
+                tv_favorite.setText(user.getFavorite());
                 if(user.getImageURL().equals("default")){
                     profile_pic.setImageResource(R.mipmap.ic_default_profile_pic);
                 } else{

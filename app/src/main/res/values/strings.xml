@@ -2,7 +2,12 @@
     <string name="app_name">Chatting App</string>
     <string name="password">Password</string>
     <string name="email_id">Email-id</string>
-    <string name="login">login</string>
+
+    <string name="school">school</string>
+    <string name="aword">aword</string>
+    <string name="favorite">favoirte</string>
+    <string name="git">git</string>
+
     <string name="newaccount">Create a new account</string>
     <string name="username">Username</string>
     <string name="confirm_password">Confirm Password</string>

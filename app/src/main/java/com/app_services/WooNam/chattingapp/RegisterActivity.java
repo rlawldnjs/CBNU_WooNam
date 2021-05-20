@@ -8,9 +8,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +28,7 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
-    EditText fName, username, email, password, confirmPassword;
+    EditText fName, username, email, password, confirmPassword,school,git,aword,favorite;
     Button btn_register;
 
     FirebaseAuth auth;
@@ -40,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Register");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,10 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirm_password);
         btn_register = findViewById(R.id.btn_register);
+        school= findViewById(R.id.school);
+        git= findViewById(R.id.git);
+        aword= findViewById(R.id.aword);
+        favorite= findViewById(R.id.favorite);
 
 
 
@@ -68,13 +73,18 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
-                String txt_conPassword = confirmPassword.getText().toString();
+                String txt_conPassword=confirmPassword.getText().toString();
+                String txt_school = school.getText().toString();
+                String txt_git = git.getText().toString();
+                String txt_aword = aword.getText().toString();
+                String txt_favorite = favorite.getText().toString();
+
 
                 if (TextUtils.isEmpty(txt_fName) || TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_conPassword)) {
 
                     Toast.makeText(RegisterActivity.this, "All fields are required!", Toast.LENGTH_SHORT).show();
                 }
-                if(txt_password.length() < 8){
+                if(txt_password.length() < 6){
 
                     Toast.makeText(RegisterActivity.this, "Password must be at least 8 character long!", Toast.LENGTH_SHORT).show();
                 }
@@ -82,14 +92,16 @@ public class RegisterActivity extends AppCompatActivity {
 
                     Toast.makeText(RegisterActivity.this, "Password not matched!, Please write it again!", Toast.LENGTH_SHORT).show();
                 }
-                register(txt_fName, txt_username, txt_email, txt_password);
+                register(txt_fName, txt_username, txt_email, txt_password,txt_school,txt_conPassword,txt_git,txt_favorite);
             }
         });
 
     }
 
     private void register(final String fName, final String username,
-                          final String email, final String password){
+                          final String email, final String password,
+                          final String school,final String aword,
+                          final String favorite,final String git){
 
         progressBar.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -106,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
                         reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
 
                         HashMap<String, String> hashMap = new HashMap<>();
-                        putDataOnHash(hashMap, fName, email, userId, username);
+                        putDataOnHash(hashMap, fName, email, userId, username,school,aword,favorite,git);
 
                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -127,14 +139,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void putDataOnHash(HashMap<String, String> hashMap, String fName, String email, String userId, String username) {
-        String default_status = "Hey I'm using Chatting App.";
+    private void putDataOnHash(HashMap<String, String> hashMap, String fName, String email, String userId, String username,String school,String aword,String favorite,String git) {
+        String default_status = "안녕하세요 ";
         String default_user_status = "offline";
         String default_image = "default";
         hashMap.put("id", userId);
         hashMap.put("name", fName);
         hashMap.put("username", username);
-        hashMap.put("email", email);
+        hashMap.put("school", school);
+        hashMap.put("favorite", favorite);
+        hashMap.put("aword", aword);
+        hashMap.put("git", git);
         hashMap.put("imageURL", default_image);
         hashMap.put("status", default_user_status);
         hashMap.put("searchable_name", username.toLowerCase());

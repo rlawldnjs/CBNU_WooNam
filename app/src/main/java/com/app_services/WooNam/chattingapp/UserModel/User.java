@@ -7,15 +7,23 @@ public class User {
     private String name;
     private String username;
     private String email;
+    private String school;
+    private String git;
+    private String aword;
+    private String favorite;
     private String imageURL;
     private String user_about;
     private String status;
     private String searchable_name;
 
-    public User(String id, String fName, String username, String email, String imageURL, String user_about, String user_status, String searchable_name) {
+    public User(String id, String fName, String username, String email, String imageURL, String user_about, String user_status, String searchable_name,String git,String aword,String favorite,String school) {
         this.id = id;
         this.name = fName;
         this.username = username;
+        this.school=school;
+        this.git=git;
+        this.favorite=favorite;
+        this.aword=aword;
         this.email = email;
         this.imageURL = imageURL;
         this.user_about = user_about;
@@ -50,10 +58,41 @@ public class User {
         return username;
     }
 
+
     public void setUsername(String username) {
         this.username = username;
     }
+    public String getSchool() {
+        return school;
+    }
+    public void setSchool(String school) {
+        this.school = school;
+    }
 
+    public String getFavorite() {
+        return favorite;
+
+    }
+    public void setFavorite(String favorite) {
+        this.favorite = favorite;
+    }
+
+    public String getAword() {
+        return aword;
+
+    }
+    public void setAword(String aword) {
+        this.aword = aword;
+    }
+
+
+    public String getGit() {
+        return git;
+
+    }
+    public void setGit(String git) {
+        this.git = git;
+    }
     public String getEmail() {
         return email;
     }
@@ -93,4 +132,5 @@ public class User {
     public void setSearchable_name(String searchable_name) {
         this.searchable_name = searchable_name;
     }
+
 }

@@ -43,10 +43,10 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-    EditText name, username, email;
+    EditText name, username, email,school;
     EditText about;
     CircleImageView profile_pic;
-    LinearLayout ll_for_name, ll_for_about, ll_for_username;
+    LinearLayout ll_for_name, ll_for_about, ll_for_username,ll_for_school;
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -63,7 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("프로필");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,11 +76,13 @@ public class ProfileActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         about = findViewById(R.id.user_about);
         email = findViewById(R.id.email);
+        school= findViewById(R.id.school);
         profile_pic = findViewById(R.id.user_profile_pic);
 
         ll_for_name = findViewById(R.id.ll_for_name);
         ll_for_username = findViewById(R.id.ll_for_username);
         ll_for_about = findViewById(R.id.ll_for_about);
+        ll_for_school = findViewById(R.id.ll_for_school);
 
 
 
@@ -98,6 +100,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String fullName = user.getName();
                 name.setText(fullName);
                 username.setText(user.getUsername());
+                school.setText(user.getSchool());
                 about.setText(user.getUser_about());
                 email.setText(firebaseUser.getEmail());
 
@@ -237,6 +240,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
         username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -244,6 +248,46 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        ll_for_school.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String oldSchool = school.getText().toString();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle("Enter School");
+
+
+                final EditText input = new EditText(getApplicationContext());
+                input.setText(school.getText().toString());
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        school.setText(input.getText().toString());
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("school", school.getText().toString());
+                        reference.updateChildren(hashMap);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        school.setText(oldSchool);
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+        school.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll_for_school.performClick();
+            }
+        });
     }
 
 
