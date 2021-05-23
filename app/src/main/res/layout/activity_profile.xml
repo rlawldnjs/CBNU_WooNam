@@ -106,12 +106,12 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:background="@color/gray_light"/>
-
+                <!--별명-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/ll_for_school"
+                    android:id="@+id/ll_for_user_name"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?attr/selectableItemBackground">
@@ -136,7 +136,7 @@
                         android:layout_weight="12">
 
                         <EditText
-                            android:id="@+id/school"
+                            android:id="@+id/username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
@@ -147,7 +147,7 @@
                             android:focusableInTouchMode="false"
                             android:background="@null"
                             android:enabled="true"
-                            android:hint="학교/학년/전공"
+                            android:hint="별명"
                             android:inputType="text"
                             android:maxLines="1"
                             android:paddingTop="8dp"
@@ -164,15 +164,14 @@
                         android:layout_weight="1"
                         android:paddingStart="4dp" />
                 </LinearLayout>
-
-
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:background="@color/gray_light"/>
+
+                <!--자기소개-->
 
                 <View
                     android:layout_width="match_parent"
@@ -245,11 +244,213 @@
                     android:layout_marginRight="16dp"
                     android:background="@color/gray_light"/>
 
+                <!--관심분야-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/ll_for_username"
+                    android:id="@+id/ll_for_favorite"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_person_skyblue_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarStyle="insideInset"
+                        android:layout_marginRight="16dp"
+                        android:padding="8dp"
+                        android:layout_weight="12">
+
+                        <EditText
+                            android:id="@+id/favorite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:lines="1"
+                            android:focusable="false"
+                            android:scrollHorizontally="true"
+                            android:focusableInTouchMode="false"
+                            android:background="@null"
+                            android:enabled="true"
+                            android:hint="관심분야"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingTop="8dp"
+                            android:textColor="@color/colorBlack"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_edit_skyblue_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+                </LinearLayout>
+
+
+                <!--학교/학년/전공-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_school"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_person_skyblue_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarStyle="insideInset"
+                        android:layout_marginRight="16dp"
+                        android:padding="8dp"
+                        android:layout_weight="12">
+
+                        <EditText
+                            android:id="@+id/school"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:lines="1"
+                            android:focusable="false"
+                            android:scrollHorizontally="true"
+                            android:focusableInTouchMode="false"
+                            android:background="@null"
+                            android:enabled="true"
+                            android:hint="학교/학년/전공"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingTop="8dp"
+                            android:textColor="@color/colorBlack"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_edit_skyblue_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+                </LinearLayout>
+
+
+                <!--수상경험-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_awoard"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_info_outline_black_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarStyle="insideOverlay"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:padding="8dp"
+                        android:layout_weight="12">
+
+                        <EditText
+                            android:id="@+id/aword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:lines="1"
+                            android:focusableInTouchMode="false"
+                            android:background="@null"
+                            android:scrollHorizontally="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="수상경험"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingTop="8dp"
+                            android:textColor="@color/colorBlack" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_edit_skyblue_24dp"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1"
+                        android:paddingStart="4dp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+
+                <!--깃허브 닉네임-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_git"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?attr/selectableItemBackground">
@@ -272,7 +473,7 @@
                         android:layout_weight="12">
 
                         <EditText
-                            android:id="@+id/username"
+                            android:id="@+id/git"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
@@ -282,7 +483,7 @@
                             android:scrollHorizontally="true"
                             android:focusableInTouchMode="false"
                             android:enabled="true"
-                            android:hint="별명"
+                            android:hint="깃허브 닉네임"
                             android:inputType="text"
                             android:maxLines="2"
                             android:paddingTop="8dp"
@@ -309,7 +510,7 @@
                     android:background="@color/gray_light"/>
 
 
-
+                <!--이메일-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

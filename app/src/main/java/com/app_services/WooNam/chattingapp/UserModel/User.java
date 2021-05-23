@@ -20,15 +20,16 @@ public class User {
         this.id = id;
         this.name = fName;
         this.username = username;
-        this.school=school;
-        this.git=git;
-        this.favorite=favorite;
-        this.aword=aword;
         this.email = email;
         this.imageURL = imageURL;
         this.user_about = user_about;
         this.status = user_status;
         this.searchable_name = searchable_name;
+        this.git=git;
+        this.favorite=favorite;
+        this.aword=aword;
+        this.school=school;
+
     }
 
     public User(){
@@ -58,10 +59,12 @@ public class User {
         return username;
     }
 
-
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+
     public String getSchool() {
         return school;
     }
@@ -85,7 +88,6 @@ public class User {
         this.aword = aword;
     }
 
-
     public String getGit() {
         return git;
 
@@ -93,6 +95,7 @@ public class User {
     public void setGit(String git) {
         this.git = git;
     }
+
     public String getEmail() {
         return email;
     }

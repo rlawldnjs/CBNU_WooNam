@@ -43,10 +43,10 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-    EditText name, username, email,school;
+    EditText name, username, email,school,git,aword,favorite;
     EditText about;
     CircleImageView profile_pic;
-    LinearLayout ll_for_name, ll_for_about, ll_for_username,ll_for_school;
+    LinearLayout ll_for_name, ll_for_about, ll_for_username,ll_for_school,ll_for_favorite,ll_for_aword,ll_for_git;
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -78,11 +78,17 @@ public class ProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         school= findViewById(R.id.school);
         profile_pic = findViewById(R.id.user_profile_pic);
+        git= findViewById(R.id.git);
+        favorite= findViewById(R.id.favorite);
+        aword= findViewById(R.id.aword);
 
         ll_for_name = findViewById(R.id.ll_for_name);
-        ll_for_username = findViewById(R.id.ll_for_username);
+        ll_for_username = findViewById(R.id.ll_for_user_name);
         ll_for_about = findViewById(R.id.ll_for_about);
         ll_for_school = findViewById(R.id.ll_for_school);
+        ll_for_git = findViewById(R.id.ll_for_git);
+        ll_for_favorite = findViewById(R.id.ll_for_favorite);
+        ll_for_aword= findViewById(R.id.ll_for_awoard);
 
 
 
@@ -103,6 +109,10 @@ public class ProfileActivity extends AppCompatActivity {
                 school.setText(user.getSchool());
                 about.setText(user.getUser_about());
                 email.setText(firebaseUser.getEmail());
+                git.setText(user.getGit());
+                favorite.setText(user.getFavorite());
+                aword.setText(user.getAword());
+
 
 
                 if (user.getImageURL().equals("default")){
@@ -206,6 +216,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
         ll_for_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -245,6 +256,133 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ll_for_username.performClick();
+            }
+        });
+
+
+        ll_for_favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String oldFavorite = favorite.getText().toString();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle("Enter favorite");
+
+
+                final EditText input = new EditText(getApplicationContext());
+                input.setText(favorite.getText().toString());
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        favorite.setText(input.getText().toString());
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("favorite", favorite.getText().toString());
+                        reference.updateChildren(hashMap);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        favorite.setText(oldFavorite);
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll_for_favorite.performClick();
+            }
+        });
+
+        ll_for_git.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String oldGit = git.getText().toString();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle("Enter git");
+
+
+                final EditText input = new EditText(getApplicationContext());
+                input.setText(git.getText().toString());
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        git.setText(input.getText().toString());
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("git", git.getText().toString());
+                        reference.updateChildren(hashMap);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        git.setText(oldGit);
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
+        git.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll_for_git.performClick();
+            }
+        });
+
+        ll_for_aword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String oldAword = aword.getText().toString();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle("Enter aword");
+
+
+                final EditText input = new EditText(getApplicationContext());
+                input.setText(aword.getText().toString());
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        aword.setText(input.getText().toString());
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("aword", aword.getText().toString());
+                        reference.updateChildren(hashMap);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        aword.setText(oldAword);
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
+        aword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll_for_aword.performClick();
             }
         });
 

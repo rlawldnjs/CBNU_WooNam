@@ -239,7 +239,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:hint="깃허브 주소"
+                    android:hint="깃허브 닉네임"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textColorHighlight="#7cff88" />
