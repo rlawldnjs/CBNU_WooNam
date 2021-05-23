@@ -5,7 +5,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.app_services.WooNam.chattingapp"
-        minSdkVersion 30
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app_services.WooNam.chattingapp.R;
-import com.app_services.mr_kaushik.chattingapp.UserModel.Chat;
+import com.app_services.WooNam.chattingapp.UserModel.Chat;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

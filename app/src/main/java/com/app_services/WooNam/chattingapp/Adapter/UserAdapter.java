@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.app_services.WooNam.chattingapp.MessageActivity;
 import com.app_services.WooNam.chattingapp.R;
-import com.app_services.mr_kaushik.chattingapp.UserModel.Chat;
+import com.app_services.WooNam.chattingapp.UserModel.Chat;
 import com.app_services.WooNam.chattingapp.UserModel.User;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
