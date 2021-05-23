@@ -18,7 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app_services.WooNam.chattingapp.Adapter.MessageAdapter;
-import com.app_services.mr_kaushik.chattingapp.UserModel.Chat;
+import com.app_services.WooNam.chattingapp.UserModel.Chat;
 import com.app_services.WooNam.chattingapp.UserModel.User;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
