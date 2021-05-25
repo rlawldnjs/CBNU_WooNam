@@ -1,4 +1,4 @@
-package com.app_services.mr_kaushik.chattingapp.UserModel;
+package com.app_services.WooNam.chattingapp.UserModel;
 
 public class Chat {
     private String sender;

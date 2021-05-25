@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.app_services.WooNam.chattingapp.Adapter.UserAdapter;
 import com.app_services.WooNam.chattingapp.R;
-import com.app_services.mr_kaushik.chattingapp.UserModel.ChatList;
+import com.app_services.WooNam.chattingapp.UserModel.ChatList;
 import com.app_services.WooNam.chattingapp.UserModel.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

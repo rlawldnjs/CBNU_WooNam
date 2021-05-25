@@ -7,431 +7,442 @@
     android:layout_width="wrap_content">
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:id="@+id/bar_layout"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/MenuStyle">
+            android:id="@+id/bar_layout"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/MenuStyle">
 
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/user_profile_pic"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="16dp"/>
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/user_profile_pic"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_about"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_info_outline_black_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
+            android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/about_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="자기소개"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvAbout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/about_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:focusableInTouchMode="true"
-                        android:scrollHorizontally="true"
-                        android:textColor="@color/colorBlack"
-                        />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-            <!--FirstName-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_name"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/name_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="이름"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
-                </RelativeLayout>
-
-            </LinearLayout>
-            <!--학교 / 학년 / 전공-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_school"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/school_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="학교/학년/전공"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvSchool"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/school_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
-                </RelativeLayout>
-
-            </LinearLayout>
-            <!--깃-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_git"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/git_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="깃허브 닉네임"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvGit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/git_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
-                </RelativeLayout>
-
-            </LinearLayout>
-            <!--수상경험-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_awoard"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/aword_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="수상내역"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvAword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/aword_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
-                </RelativeLayout>
-
-            </LinearLayout>
-            <!--관심사-->
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_favorite"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/favorite_tag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="관심분야"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvFavorite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/favorite_tag"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-            <!--about-->
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/user_profile_pic"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_for_user_name"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_person_skyblue_24dp"
-                    android:layout_margin="8dp"
-                    android:paddingTop="16dp"
-                    android:layout_weight="1" />
-                <RelativeLayout
+                android:layout_below="@id/user_profile_pic"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15">
-
-                    <TextView
-                        android:id="@+id/userName_tag"
-                        android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_about"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="별명"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorDarkGrey"
-                        />
-                    <TextView
-                        android:id="@+id/tvUsername"
+                        app:srcCompat="@drawable/baseline_face_24"
+                        android:layout_margin="8dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1" />
+                    <RelativeLayout
                         android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/about_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="자기소개"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvAbout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/about_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:focusableInTouchMode="true"
+                            android:scrollHorizontally="true"
+                            android:textColor="@color/colorBlack"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <!--FirstName-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_name"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/userName_tag"
-                        android:scrollHorizontally="true"
-                        android:focusableInTouchMode="true"
-                        android:paddingTop="4dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:textColor="@color/colorBlack"
-                        />
+                        app:srcCompat="@drawable/baseline_person_24"
+                        android:layout_margin="8dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/name_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="이름"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/name_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+                    </RelativeLayout>
 
+                </LinearLayout>
+
+                <!--about-->
+
+
+                <!--별명-->>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_user_name"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:paddingTop="24dp"
+                        app:srcCompat="@drawable/ic_person_outline_black_24dp"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/userName_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="별명"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/userName_tag"
+                            android:scrollHorizontally="true"
+                            android:focusableInTouchMode="true"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--관심사-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_favorite"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/baseline_tag_24"
+                        android:layout_margin="8dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/favorite_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="관심분야"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvFavorite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/favorite_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!--학교 / 학년 / 전공-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_school"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/baseline_school_24"
+                        android:layout_margin="8dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/school_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="학교/학년/전공"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvSchool"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/school_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--수상경험-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_awoard"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:paddingTop="16dp"
+                        app:srcCompat="@drawable/baseline_aword_24" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/aword_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="수상내역"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvAword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/aword_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--깃-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_for_git"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/baseline_git_24"
+                        android:layout_margin="8dp"
+                        android:paddingTop="16dp"
+                        android:layout_weight="1" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                        <TextView
+                            android:id="@+id/git_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="깃허브 닉네임"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorDarkGrey"
+                            />
+                        <TextView
+                            android:id="@+id/tvGit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/git_tag"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/colorBlack"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/gray_light"/>
             </LinearLayout>
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/gray_light"/>
-        </LinearLayout>
-
-    </RelativeLayout>
+        </RelativeLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>
