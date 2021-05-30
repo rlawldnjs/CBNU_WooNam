@@ -101,9 +101,9 @@ public class MainChatActivity extends AppCompatActivity {
         });
 
 
-        viewPageAdapter.addFragment(new ChatsFragment(), "Chats");
-        viewPageAdapter.addFragment(new UsersFragment(), "Users");
-        viewPageAdapter.addFragment(new FavoriteFragment(), "Favorite");
+        viewPageAdapter.addFragment(new ChatsFragment(), "채팅방");
+        viewPageAdapter.addFragment(new UsersFragment(), "유저");
+        viewPageAdapter.addFragment(new FavoriteFragment(), "관심분야");
         Log.i("Checking Order", "onCreate: After View Page adapter creation");
 
         viewPager.setAdapter(viewPageAdapter);

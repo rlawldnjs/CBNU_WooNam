@@ -89,7 +89,7 @@
             android:layout_toStartOf="@id/btn_send"
             android:layout_toLeftOf="@id/btn_send"
             android:background="@android:color/transparent"
-            android:hint="@string/type_a_message"
+            android:hint="메세지를 입력하세요."
             android:paddingStart="16dp"
             android:paddingLeft="16dp"
             android:textSize="18sp" />

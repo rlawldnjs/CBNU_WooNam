@@ -20,7 +20,7 @@
         android:padding="8dp"
         android:textSize="20sp"
         android:focusable="auto"
-        android:hint="@string/search_user"
+        android:hint="찾고싶은 유저를 검색하세요."
         android:background="@android:color/transparent"
         android:layout_toEndOf="@id/image_icon"
         android:layout_marginBottom="4dp"
