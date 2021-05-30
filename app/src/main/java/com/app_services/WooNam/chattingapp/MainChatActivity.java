@@ -26,6 +26,7 @@ import com.app_services.WooNam.chattingapp.Fragments.ChatsFragment;
 import com.app_services.WooNam.chattingapp.Fragments.UsersFragment;
 import com.app_services.WooNam.chattingapp.UserModel.User;
 import com.app_services.WooNam.chattingapp.Fragments.FavoriteFragment;
+import com.app_services.WooNam.chattingapp.Fragments.RecentPostsFragment;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -104,6 +105,7 @@ public class MainChatActivity extends AppCompatActivity {
         viewPageAdapter.addFragment(new ChatsFragment(), "Chats");
         viewPageAdapter.addFragment(new UsersFragment(), "Users");
         viewPageAdapter.addFragment(new FavoriteFragment(), "Favorite");
+        viewPageAdapter.addFragment(new RecentPostsFragment(), "게시판");
         Log.i("Checking Order", "onCreate: After View Page adapter creation");
 
         viewPager.setAdapter(viewPageAdapter);

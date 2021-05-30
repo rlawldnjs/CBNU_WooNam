@@ -10,5 +10,9 @@
     <style name="MenuStyle" parent="Theme.AppCompat.Light">
         <item name="background">@android:color/white</item>
     </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
 </resources>
