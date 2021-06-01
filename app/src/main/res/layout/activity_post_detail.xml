@@ -33,7 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Write a comment..."
+        android:hint="댓글을 입력하세요."
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@+id/buttonPostComment"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,7 +46,8 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Post"
+        android:text="포스트"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="2"
@@ -57,6 +58,7 @@
         android:id="@+id/recyclerPostComments"
         android:layout_width="0dp"
         android:layout_height="0dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

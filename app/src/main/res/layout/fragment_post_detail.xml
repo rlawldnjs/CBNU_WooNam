@@ -46,6 +46,8 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="@color/BackgroundColorForChat"
         android:text="포스트"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

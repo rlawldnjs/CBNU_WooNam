@@ -22,12 +22,12 @@
     <string name="dummy_text">dummy_Text</string>
 
     <string name="type_a_message">메세지를 입력하세요.</string>
-    <string name="forget_password">Forget Password ?</string>
+    <string name="forget_password">비밀번호를 못찾으셨나요 ?</string>
     <string name="WooNam">WooNam</string>
-    <string name="reset_password">Reset Password</string>
+    <string name="reset_password">비밀번호 재설정</string>
     <string name="clicking">You will get an email on clicking the RESET button.</string>
     <string name="reset">Reset</string>
-    <string name="enter_your_e_mail_id">Enter Your E-Mail id</string>
+    <string name="enter_your_e_mail_id">이메일을 입력하세요</string>
     <string name="search_user">찾고 싶은 유저를 검색하세요.</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>

@@ -39,7 +39,7 @@
             android:paddingRight="16dp"
             android:textSize="18sp"
             android:id="@+id/btn_reset"
-            android:background="@color/colorGrey"
+            android:background="@color/colorPrimaryDark"
             android:layout_marginTop="10dp"
             android:textColor="@color/colorWhite"
             />
