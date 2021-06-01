@@ -20,7 +20,7 @@
         android:padding="8dp"
         android:textSize="20sp"
         android:focusable="auto"
-        android:hint="찾으려는 favorite을 입력하세요."
+        android:hint="'#관심분야'를 입력하세요."
         android:background="@android:color/transparent"
         android:layout_toEndOf="@id/image_icon"
         android:layout_marginBottom="4dp"

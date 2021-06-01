@@ -23,11 +23,10 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 import com.app_services.WooNam.chattingapp.R;
-import com.app_services.WooNam.chattingapp.Fragments.PostDetailFragment;
 import com.app_services.WooNam.chattingapp.models.Post;
 import com.app_services.WooNam.chattingapp.viewholder.PostViewHolder;
 
-public abstract class PostListFragment extends Fragment {
+public class PostListFragment extends Fragment {
 
     private static final String TAG = "PostListFragment";
 
@@ -56,6 +55,8 @@ public abstract class PostListFragment extends Fragment {
 
         return rootView;
     }
+
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -96,7 +97,7 @@ public abstract class PostListFragment extends Fragment {
                                 R.id.nav_host_fragment);
                         Bundle args = new Bundle();
                         args.putString(PostDetailFragment.EXTRA_POST_KEY, postKey);
-                        navController.navigate(R.id.action_RecentPostsFragment_to_PostDetailFragment, args);
+                        navController.navigate(R.id.action_PostListFragment_to_PostDetailFragment, args);
                     }
                 });
 
@@ -181,6 +182,15 @@ public abstract class PostListFragment extends Fragment {
         return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
-    public abstract Query getQuery(DatabaseReference databaseReference);
+    public Query getQuery(DatabaseReference databaseReference) {
+        // [START recent_posts_query]
+        // Last 100 posts, these are automatically the 100 most recent
+        // due to sorting by push() keys
+        Query recentPostsQuery = databaseReference.child("posts")
+                .limitToFirst(100);
+        // [END recent_posts_query]
+
+        return recentPostsQuery;
+    }
 
 }

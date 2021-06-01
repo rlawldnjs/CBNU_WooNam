@@ -12,7 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,12 +32,13 @@ import com.app_services.WooNam.chattingapp.viewholder.CommentViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDetailFragment extends BaseFragment{
+public class PostDetailFragment extends Fragment{
 
     private static final String TAG = "PostDetailFragment";
 
     public static final String EXTRA_POST_KEY = "post_key";
 
+    FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
     private DatabaseReference mPostReference;
     private DatabaseReference mCommentsReference;
     private ValueEventListener mPostListener;
@@ -42,6 +46,10 @@ public class PostDetailFragment extends BaseFragment{
     private CommentAdapter mAdapter;
 
     private FragmentPostDetailBinding binding;
+
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
     @Nullable
     @Override
@@ -123,7 +131,7 @@ public class PostDetailFragment extends BaseFragment{
 
     private void postComment() {
         final String uid = getUid();
-        FirebaseDatabase.getInstance().getReference().child("users").child(uid)
+        FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

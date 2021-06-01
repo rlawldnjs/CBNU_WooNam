@@ -11,7 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,13 +28,18 @@ import com.app_services.WooNam.chattingapp.UserModel.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NewPostFragment extends BaseFragment {
+public class NewPostFragment extends Fragment {
     private static final String TAG = "NewPostFragment";
     private static final String REQUIRED = "Required";
 
     private DatabaseReference mDatabase;
+    FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
 
     private FragmentNewPostBinding binding;
+
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
     @Nullable
     @Override
@@ -74,16 +82,16 @@ public class NewPostFragment extends BaseFragment {
         Toast.makeText(getContext(), "Posting...", Toast.LENGTH_SHORT).show();
 
         final String userId = getUid();
-        mDatabase.child("users").child(userId).addListenerForSingleValueEvent(
+        FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         // Get user value
                         User user = dataSnapshot.getValue(User.class);
-
                         if (user == null) {
                             // User is null, error out
                             Log.e(TAG, "User " + userId + " is unexpectedly null");
+                            Log.e(TAG, "User " + user.getName() + " is unexpectedly null");
                             Toast.makeText(getContext(),
                                     "Error: could not fetch user.",
                                     Toast.LENGTH_SHORT).show();
@@ -94,7 +102,7 @@ public class NewPostFragment extends BaseFragment {
 
                         setEditingEnabled(true);
                         NavHostFragment.findNavController(NewPostFragment.this)
-                                .navigate(R.id.action_NewPostFragment_to_RecentPostsFragment);
+                                .navigate(R.id.action_NewPostFragment_to_PostListFragment);
                     }
 
                     @Override

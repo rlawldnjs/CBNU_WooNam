@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_java"
-    app:startDestination="@id/RecentPostsFragment">
+    app:startDestination="@id/PostListFragment">
 
     <!--    <fragment-->
     <!--        android:id="@+id/SignInFragment"-->
@@ -17,18 +17,18 @@
     <!--            app:destination="@id/MainFragment" />-->
     <!--    </fragment>-->
     <fragment
-        android:id="@+id/RecentPostsFragment"
-        android:name="com.app_services.WooNam.chattingapp.Fragments.RecentPostsFragment"
+        android:id="@+id/PostListFragment"
+        android:name="com.app_services.WooNam.chattingapp.Fragments.PostListFragment"
         android:label="@string/app_name">
         <action
-            android:id="@+id/action_RecentPostsFragment_to_NewPostFragment"
+            android:id="@+id/action_PostListFragment_to_NewPostFragment"
             app:destination="@id/NewPostFragment" />
         <!--        <action-->
         <!--            android:id="@+id/action_MainFragment_to_SignInFragment"-->
         <!--            app:destination="@id/SignInFragment"-->
         <!--            app:popUpTo="@id/SignInFragment" />-->
         <action
-            android:id="@+id/action_RecentPostsFragment_to_PostDetailFragment"
+            android:id="@+id/action_PostListFragment_to_PostDetailFragment"
             app:destination="@id/PostDetailFragment">
             <argument
                 android:name="post_key"
@@ -51,8 +51,8 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_new_post">
         <action
-            android:id="@+id/action_NewPostFragment_to_RecentPostsFragment"
-            app:destination="@id/RecentPostsFragment"
-            app:popUpTo="@id/RecentPostsFragment"></action>
+            android:id="@+id/action_NewPostFragment_to_PostListFragment"
+            app:destination="@id/PostListFragment"
+            app:popUpTo="@id/PostListFragment"></action>
     </fragment>
 </navigation>

@@ -18,6 +18,7 @@ package com.app_services.WooNam.chattingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -29,15 +30,22 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.app_services.WooNam.chattingapp.R;
 import com.app_services.WooNam.chattingapp.databinding.ActivityBoardBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class  BoardActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private NavController navController;
+
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +55,15 @@ public class  BoardActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("");
+//        Objects.requireNonNull(getSupportActionBar()).setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BoardActivity.this, MainChatActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
 
         fab = binding.fab;
 
@@ -56,12 +72,12 @@ public class  BoardActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if (destination.getId() == R.id.RecentPostsFragment) {
+                if (destination.getId() == R.id.PostListFragment) {
                     fab.setVisibility(View.VISIBLE);
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            navController.navigate(R.id.action_RecentPostsFragment_to_NewPostFragment);
+                            navController.navigate(R.id.action_PostListFragment_to_NewPostFragment);
                         }
                     });
                 } else {
@@ -69,5 +85,28 @@ public class  BoardActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void Status(String status){
+        mDatabase = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("status", status);
+        Log.i("Checking Order", "Status: ");
+
+        mDatabase.updateChildren(hashMap);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("Checking Order", "onResume: ");
+        Status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("Checking Order", "onPause: ");
+        Status("offline");
     }
 }
