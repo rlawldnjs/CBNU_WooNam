@@ -26,6 +26,7 @@ import com.app_services.WooNam.chattingapp.Fragments.ChatsFragment;
 import com.app_services.WooNam.chattingapp.Fragments.UsersFragment;
 import com.app_services.WooNam.chattingapp.UserModel.User;
 import com.app_services.WooNam.chattingapp.Fragments.FavoriteFragment;
+import com.app_services.WooNam.chattingapp.Fragments.PostListFragment;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -135,8 +136,12 @@ public class MainChatActivity extends AppCompatActivity {
                 Log.i("LOGOUT", "onOptionsItemSelected: LOGOUT ");
                 Toast.makeText(this, "Successfully Logout!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainChatActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-
                 return true;
+            case R.id.board:
+                startActivity(new Intent(MainChatActivity.this, BoardActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                return true;
+            case R.id.friend:
+                Toast.makeText(this, "추가 예정입니다!!", Toast.LENGTH_SHORT).show();
         }
         return false;
     }

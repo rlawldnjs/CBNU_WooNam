@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chatting App</string>
+    <string name="app_name">프찾사</string>
     <string name="password">Password</string>
     <string name="email_id">Email-id</string>
 
@@ -21,18 +21,19 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dummy_text">dummy_Text</string>
 
-    <string name="type_a_message">Type a message</string>
+    <string name="type_a_message">메세지를 입력하세요.</string>
     <string name="forget_password">Forget Password ?</string>
     <string name="WooNam">WooNam</string>
     <string name="reset_password">Reset Password</string>
     <string name="clicking">You will get an email on clicking the RESET button.</string>
     <string name="reset">Reset</string>
     <string name="enter_your_e_mail_id">Enter Your E-Mail id</string>
-    <string name="search_user">Search user...</string>
+    <string name="search_user">찾고 싶은 유저를 검색하세요.</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="프찾사">프찾사</string>
     <string name="name">Name</string>
     <string name="about">About</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec condimentum ante, quis mattis mi. Proin ut rhoncus libero, ac euismod neque. Ut suscipit, enim a facilisis consequat, orci lacus venenatis orci, at ultricies orci nulla sed ex. In condimentum viverra velit, eget feugiat libero imperdiet vel. Aenean pretium, lectus vitae bibendum bibendum, diam turpis convallis eros, quis tristique leo sapien at ipsum. Praesent eu odio id nulla lobortis auctor. Donec eget dolor eget nisl euismod commodo vel a lacus. Quisque ut justo vitae urna pharetra accumsan. Etiam dignissim neque iaculis mauris viverra, blandit rhoncus odio porttitor. Phasellus nibh arcu.</string>
 
 </resources>
