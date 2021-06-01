@@ -5,10 +5,14 @@
     <item android:title="로그아웃"
         android:id="@+id/logout"
         app:showAsAction="never"/>
+<<<<<<< HEAD
     <item android:title="친구추가"
         android:id="@+id/friend"
         app:showAsAction="never"/>
     <item android:title="게시판"
         android:id="@+id/board"
         app:showAsAction="never"/>
+=======
+
+>>>>>>> 409bb4dfb708d8e23520f47fb58f84df9764dfb8
 </menu>
